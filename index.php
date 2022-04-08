@@ -29,6 +29,7 @@
     $censored_text = str_replace($bad_word, $censura, $text);
     echo $censored_text;
     echo ' (' . strlen($censored_text) . ')';
+    var_dump($text)
   ?>
 </body>
 </html>
