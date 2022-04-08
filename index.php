@@ -7,12 +7,8 @@
   <title>Document</title>
 </head>
 <body>
-  <form styleaction="">
-    <input name="censored" type="text">
-    <input type="submit" value="Censura!">
-  </form>
   <?php 
-    $testo = 'you made me a, you made me a believer, believer
+    $text = 'you made me a, you made me a believer, believer
     (pain!)
     You break me down and build me up, believer, believer
     (pain!)
@@ -20,11 +16,19 @@
     my life, my love, my drive, it came from...
     (Pain!)
     you made me a, you made me a believer, believer';
+    echo $text . ' (' . strlen($text) . ')';
+  ?>
+  <form styleaction="">
+    <input name="censored" type="text">
+    <input type="submit" value="Censura!">
+  </form>
+  <?php 
+    
     $bad_word = $_GET['censored'];
     $censura = '***';
-    $censored_text = str_replace($bad_word, $censura, $testo);
+    $censored_text = str_replace($bad_word, $censura, $text);
     echo $censored_text;
-    echo ' (' . strlen($censored_text) . ')'
+    echo ' (' . strlen($censored_text) . ')';
   ?>
 </body>
 </html>
